@@ -11,9 +11,9 @@ export class GenreService {
   ) {}
 
   async bySlug(slug: string) {
-    const genre = this.GenreModel.findOne({ slug }).exec()
-    if (!genre) throw new NotFoundException('Genre not found')
-    return genre
+    const doc = await this.GenreModel.findOne({ slug }).exec()
+    if (!doc) throw new NotFoundException('Genre not found')
+    return doc
   }
 
   async getAll(searchTerm?: string) {
