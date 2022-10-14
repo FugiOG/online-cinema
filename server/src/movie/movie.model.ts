@@ -6,18 +6,18 @@ import { GenreModel } from 'src/genre/genre.model'
 export interface MovieModel extends Base {}
 
 export class Parameters {
-    @prop()
-    year: number
-  
-    @prop()
-    duration: number 
-  
-    @prop()
-    country: string
-  }
+  @prop()
+  year: number
+
+  @prop()
+  duration: number
+
+  @prop()
+  country: string
+}
 
 export class MovieModel extends TimeStamps {
-    @prop()
+  @prop()
   poster: string
 
   @prop()
@@ -26,30 +26,27 @@ export class MovieModel extends TimeStamps {
   @prop()
   title: string
 
-  @prop()
-  description: string
-
-  @prop({unique: true})
+  @prop({ unique: true })
   slug: string
 
   @prop()
   parameters?: Parameters
 
-  @prop({default: 4.0})
+  @prop({ default: 4.0 })
   rating?: number
-  
-	@prop({default: 0})
-	countOpened?: number
+
+  @prop({ default: 0 })
+  countOpened?: number
 
   @prop()
   videoUrl: string
 
-  @prop({ref: () => GenreModel})
+  @prop({ ref: () => GenreModel })
   genres: Ref<GenreModel>[]
 
-  @prop({ref: () => ActorModel})
+  @prop({ ref: () => ActorModel })
   actors: Ref<ActorModel>[]
 
-  @prop({default: false})
+  @prop({ default: false })
   isSandTelegram?: boolean
 }

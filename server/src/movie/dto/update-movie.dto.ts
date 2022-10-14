@@ -1,17 +1,23 @@
-import { IsArray, IsBoolean, IsNumber, IsObject, IsString } from 'class-validator'
+import {
+  IsArray,
+  IsBoolean,
+  IsNumber,
+  IsObject,
+  IsString,
+} from 'class-validator'
 
 export class Parameters {
   @IsNumber()
   year: number
 
   @IsNumber()
-  duration: number 
+  duration: number
 
   @IsString()
   country: string
 }
 
-export class CreateMovieDto {
+export class UpdateMovieDto {
   @IsString()
   poster: string
 
@@ -22,25 +28,21 @@ export class CreateMovieDto {
   title: string
 
   @IsString()
-  description: string
-
-  @IsString()
   slug: string
 
   @IsObject()
   parameters?: Parameters
-  
+
   @IsString()
   videoUrl: string
 
   @IsArray()
-  @IsString({each: true})
+  @IsString({ each: true })
   genres: string[]
 
   @IsArray()
-  @IsString({each: true})
+  @IsString({ each: true })
   actors: string[]
 
-  @IsBoolean()
   isSandTelegram?: boolean
 }
