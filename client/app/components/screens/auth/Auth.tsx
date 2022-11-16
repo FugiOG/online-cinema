@@ -2,13 +2,16 @@ import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Button from '@/components/ui/form-elements/Button'
+import Field from '@/components/ui/form-elements/Field'
 import Heading from '@/components/ui/heading/Heading'
 
+import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
 
 import Meta from '@/utils/meta/Meta'
 
 import styles from './Auth.module.scss'
+import AuthFields from './AuthFields'
 import { IAuthInterface } from './auth.interface'
 import { useAuthRedirect } from './useAuthRedirect'
 
@@ -28,9 +31,7 @@ const Auth: FC = () => {
 		mode: 'onChange',
 	})
 
-	const login = (data: any) => {}
-
-	const register = (data: any) => {}
+	const { login, register } = useActions()
 
 	const onSubmit: SubmitHandler<IAuthInterface> = (data) => {
 		if (type === 'login') login(data)
@@ -45,7 +46,11 @@ const Auth: FC = () => {
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<Heading title="Auth" className="mb-6" />
 
-					{/* Fields */}
+					<AuthFields
+						formState={formState}
+						register={registerInput}
+						isPasswordRequired
+					/>
 
 					<div className={styles.buttons}>
 						<Button
