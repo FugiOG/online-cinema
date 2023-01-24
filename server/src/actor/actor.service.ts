@@ -45,7 +45,7 @@ export class ActorService {
         },
       })
       .project({ __v: 0, updatedAt: 0, movies: 0 })
-      .sort({ createAt: -1 })
+      .sort({ createdAt: -1 })
       .exec()
   }
   // Admin place

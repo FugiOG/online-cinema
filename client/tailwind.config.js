@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 
@@ -14,10 +13,6 @@ module.exports = {
 			primary,
 			black: colors.black,
 			white: colors.white,
-			transparent: colors.transparent,
-			yellow: {
-				700: '#F5C521',
-			},
 			gray: {
 				300: '#d9dae8',
 				500: '#999AA5',
@@ -27,7 +22,12 @@ module.exports = {
 				900: '#191B1F',
 				950: '#101215',
 			},
+			transparent: colors.transparent,
+			yellow: {
+				700: '#F5C521',
+			},
 		},
+
 		extend: {
 			spacing: {
 				0.5: '0.12rem',
@@ -41,15 +41,10 @@ module.exports = {
 				layout: '0.8rem',
 			},
 			transitionTimingFunction: {
-				DEFAULT: 'easy-in-out',
+				DEFAULT: 'ease-in-out',
 			},
 			transitionDuration: {
 				DEFAULT: '200ms',
-			},
-			zIndex: {
-				1: '1',
-				2: '2',
-				3: '3',
 			},
 			keyframes: {
 				fade: {
@@ -71,8 +66,13 @@ module.exports = {
 				},
 			},
 			animation: {
-				fade: 'fade .5s easy-in-out',
-				scaleIn: 'scaleIn .35s easy-in-out',
+				fade: 'fade .5s ease-in-out',
+				scaleIn: 'scaleIn .35s ease-in-out',
+			},
+			zIndex: {
+				1: '1',
+				2: '2',
+				3: '3',
 			},
 		},
 	},
@@ -134,54 +134,3 @@ module.exports = {
 		}),
 	],
 }
-// plugins: [
-// 	plugin(function ({ addComponents, theme, addUtilites }) {
-// 		addComponents({
-// 			'.btn-primary': {
-// 				backgroundColor: primary,
-// 				color: '#fff',
-// 				borderRadius: '0.65rem',
-// 				transition: 'background-color .3s easy-in-out',
-// 				'&:hover': {
-// 					backgroundColor: '#ff0009',
-// 				},
-// 			},
-// 			'.text-link': {
-// 				textUnderlineOffset: 4,
-// 				color: 'rgba(255, 255, 255, .9)',
-// 				transition: 'text-decoration-color .3s easy-in-out',
-// 				textDecorationLine: 'underline',
-// 				textDecorationColor: 'rgba(255, 255, 255, 0.2)',
-// 				'&:hover': {
-// 					textDecorationColor: 'rgba(255, 255, 255, 0.9)',
-// 				},
-// 			},
-// 			'.air-block': {
-// 				borderRadius: theme('borderRadius.layout'),
-// 				backgroundColor: theme('colors.gray.950'),
-// 				color: theme('colors.white'),
-// 			},
-// 		}),
-// 			addUtilites({
-// 				'.text-shadow': {
-// 					textShadow: '1px 1px rgba(0, 0, 0, 0.4)',
-// 				},
-// 				'.outline-border-none': {
-// 					outline: 'none',
-// 					border: 'none',
-// 				},
-// 				'.flex-center-between': {
-// 					display: 'flex',
-// 					alignItems: 'center',
-// 					justifyContetnt: 'space-between',
-// 				},
-
-// 				'.image-like-bg': {
-// 					objectPosition: 'center',
-// 					objextFit: 'cover',
-// 					pointerEvents: 'none',
-// 				},
-// 			})
-// 	}),
-// ],
-// }

@@ -1,9 +1,11 @@
+import Profile from '@/components/screens/profile/Profile'
+
 import { NextPageAuth } from '@/shared/types/auth.types'
 
-const Profile: NextPageAuth = () => {
-	return <div>profile</div>
+const ProfilePage: NextPageAuth = () => {
+	return <Profile />
 }
 
-Profile.isOnlyUser = true
+ProfilePage.isOnlyUser = true
 
-export default Profile
+export default ProfilePage

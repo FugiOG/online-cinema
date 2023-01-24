@@ -28,13 +28,13 @@ export class UserController {
     return this.UserService.byId(_id)
   }
 
-  @Get('profile/favourites')
+  @Get('profile/favorites')
   @Auth()
   async getFavourites(@User('_id') _id: Types.ObjectId) {
     return this.UserService.getFavouriteMovies(_id)
   }
 
-  @Put('profile/favourites')
+  @Put('profile/favorites')
   @Auth()
   async toggleFavourites(
     @Body('movieId') movieId: Types.ObjectId,

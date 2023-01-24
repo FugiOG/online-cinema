@@ -29,7 +29,7 @@ export class MovieService {
 
     return this.MovieModel.find(options)
       .select('-updatedAt -__v')
-      .sort({ createAt: 'desc' })
+      .sort({ createdAt: 'desc' })
       .populate('actors genres')
       .exec()
   }
