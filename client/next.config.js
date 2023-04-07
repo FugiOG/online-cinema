@@ -11,11 +11,11 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: `http://localhost:4200/api/:path*`,
+				destination: `${process.env.REACT_APP_SERVER_URL}/api/:path*`,
 			},
 			{
 				source: '/uploads/:path*',
-				destination: `http://localhost:4200/uploads/:path*`,
+				destination: `${process.env.REACT_APP_SERVER_URL}/uploads/:path*`,
 			},
 		]
 	},
