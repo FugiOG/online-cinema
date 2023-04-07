@@ -1,7 +1,8 @@
 import cn from 'classnames'
 import { FC } from 'react'
 import Skeleton, { SkeletonProps } from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/Skeleton.css'
+
+// import 'react-loading-skeleton/dist/'
 
 const SkeletonLoader: FC<SkeletonProps> = ({ className, ...rest }) => {
 	return (
